@@ -1,17 +1,23 @@
 [package]
 name = "pompom"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build-dependencies]
+directories = "5.0.1"
+
 [dependencies]
 clap = { version = "4.3.19", features = ["derive"] }
 colored = "2.0.4"
+directories = "5.0.1"
 indicatif = "0.17.6"
 kira = "0.8.4"
 notify-rust = "4.8.0"
+project-root = "0.2.2"
 rand = "0.8.5"
+relative-path = "1.8.0"
 serde = { version = "1.0.181", features = ["derive"] }
 tokio = { version = "1.29.1", features = ["full"] }
 toml = "0.7.6"
