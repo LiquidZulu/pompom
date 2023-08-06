@@ -30,7 +30,6 @@ pub fn get_config() -> Config {
             Period::Work,
             Period::Rest,
             Period::Work,
-            Period::Rest,
             Period::LongRest,
         ],
     };

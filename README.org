@@ -1,0 +1,65 @@
+#+title: pompom
+#+options: toc:nil
+
+[[./pompom-demo.gif]]
+
+#+toc: headlines 3
+
+* installation
+** build from source
+The source code can be found at [[https://github.com/LiquidZulu/pompom][this]] GitHub repo. Nix tooling is provided through =default.nix= and can be accessed by running =nix-shell= after navigating to the repository on your terminal. I do not believe this step to be necessary on non-NixOS distributions, all that this does is provides [[https://alsa-project.org/wiki/Main_Page][ALSA]] which is required to compile.
+
+When the source has been obtained the easiest way to compile is with =cargo build --release=, then add =path/to/pompom/target/release= to your [[https://en.wikipedia.org/wiki/PATH_(variable)][PATH]]. I do not know if this software compiles on Windows, if you have any problems with doing this [[https://github.com/LiquidZulu/pompom/issues][open an issue]].
+
+** crates.io
+This software is distributed also at [[https://crates.io/crates/pompom][crates.io]], and should be able to be installed with =cargo install pompom=.
+
+* usage
+#+begin_src console
+~ » pompom --help
+Usage: pompom [OPTIONS] [WORK_DURATION] [REST_DURATION] [LONG_REST_DURATION]
+
+Arguments:
+  [WORK_DURATION]
+  [REST_DURATION]
+  [LONG_REST_DURATION]
+
+Options:
+  -u, --unit <UNIT>  [default: minutes] [possible values: seconds, minutes, hours]
+  -h, --help         Print help
+  -V, --version      Print version
+#+end_src
+* configuration
+** default config
+The following default configuration file should be generated at =$XDG_CONFIG_HOME/pompom/config.toml= upon the first time running pompom:
+#+begin_src toml
+splash_screen_variant = "Row"
+schedule = ["Work", "Rest", "Work", "Rest", "Work", "Rest", "Work", "LongRest"]
+
+[work_duration]
+Minutes = 25
+
+[rest_duration]
+Minutes = 5
+
+[long_rest_duration]
+Minutes = 30
+#+end_src
+
+** splash_screen_variant
+Options for =splash_screen_variant= are provided by the =SplashScreen= enum in =src/splash_screen.rs=, they are:
++ Row
++ Stacked
++ None
+
+Any text other than "Row" or "Stacked" will be interpreted as disabling the splash screen.
+
+** schedule
+=schedule= defines the pomodoro loop; so if you have =["Work", "Rest", "Work", "LongRest"]=, this would define a loop with a work period, followed by a rest period, followed by another work period, then a long rest before starting back at the first work. The default loop is 4 cycles of work/rest followed by a long rest. Valid periods are defined by =Period= in =src/types.rs=.
+
+** *_duration
+The =[*_duration]= variables define how long each period should take, valid units are defined by =Duration= in =src/types.rs=. So if you wanted the long rest period to be 1 hour you could achieve this with the following configuration:
+#+begin_src toml
+[long_rest_duration]
+Minutes = 30
+#+end_src
