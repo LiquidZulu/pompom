@@ -61,5 +61,5 @@ Any text other than "Row" or "Stacked" will be interpreted as disabling the spla
 The =[*_duration]= variables define how long each period should take, valid units are defined by =Duration= in =src/types.rs=. So if you wanted the long rest period to be 1 hour you could achieve this with the following configuration:
 #+begin_src toml
 [long_rest_duration]
-Minutes = 30
+Hours = 1
 #+end_src
