@@ -4,6 +4,8 @@ version = "1.0.2"
 edition = "2021"
 description = "A no-nonsense cli pomodoro timer"
 license = "Unlicense"
+exclude = ["target/", "pompom-demo.gif"]
+repository = "https://github.com/LiquidZulu/pompom"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
