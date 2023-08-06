@@ -46,7 +46,7 @@ Minutes = 5
 Minutes = 30
 #+end_src
 
-** splash_screen_variant
+** splash screen variant
 Options for =splash_screen_variant= are provided by the =SplashScreen= enum in =src/splash_screen.rs=, they are:
 + Row
 + Stacked
@@ -57,7 +57,7 @@ Any text other than "Row" or "Stacked" will be interpreted as disabling the spla
 ** schedule
 =schedule= defines the pomodoro loop; so if you have =["Work", "Rest", "Work", "LongRest"]=, this would define a loop with a work period, followed by a rest period, followed by another work period, then a long rest before starting back at the first work. The default loop is 4 cycles of work/rest followed by a long rest. Valid periods are defined by =Period= in =src/types.rs=.
 
-** *_duration
+** duration
 The =[*_duration]= variables define how long each period should take, valid units are defined by =Duration= in =src/types.rs=. So if you wanted the long rest period to be 1 hour you could achieve this with the following configuration:
 #+begin_src toml
 [long_rest_duration]
