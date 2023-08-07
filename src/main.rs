@@ -29,15 +29,17 @@ fn main() {
 
     splash_screen(&config.splash_screen_variant);
 
-    do_multiple_cycles(
-        config
-            .schedule
-            .iter()
-            .map(|x| match x {
-                Period::Work => (&work_duration, Period::Work),
-                Period::Rest => (&rest_duration, Period::Rest),
-                Period::LongRest => (&long_rest_duration, Period::LongRest),
-            })
-            .collect(),
-    )
+    loop {
+        do_multiple_cycles(
+            config
+                .schedule
+                .iter()
+                .map(|x| match x {
+                    Period::Work => (&work_duration, Period::Work),
+                    Period::Rest => (&rest_duration, Period::Rest),
+                    Period::LongRest => (&long_rest_duration, Period::LongRest),
+                })
+                .collect(),
+        )
+    }
 }
