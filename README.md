@@ -3,24 +3,23 @@
 
 # Table of Contents
 
-1.  [installation](#orgf2f4fa2)
-    1.  [build from source](#org7e0584a)
-    2.  [crates.io](#org4a42371)
-2.  [usage](#orgd540547)
-3.  [configuration](#orgb38a055)
-    1.  [default config](#org764d512)
-    2.  [splash screen variant](#orgcfdc47a)
-    3.  [schedule](#org11e5b4b)
-    4.  [duration](#org3980862)
-4.  [TODO](#orgbefd13c)
+1.  [installation](#org6262629)
+    1.  [build from source](#org2a08df8)
+    2.  [crates.io](#org06c6506)
+2.  [usage](#org63d2c98)
+3.  [configuration](#org1eaa132)
+    1.  [default config](#orgd9c9e12)
+    2.  [splash screen variant](#orgc032d9f)
+    3.  [schedule](#orgd63dccb)
+    4.  [duration](#org5d2094f)
 
 
-<a id="orgf2f4fa2"></a>
+<a id="org6262629"></a>
 
 # installation
 
 
-<a id="org7e0584a"></a>
+<a id="org2a08df8"></a>
 
 ## build from source
 
@@ -29,14 +28,14 @@ The source code can be found at [this](https://github.com/LiquidZulu/pompom) Git
 When the source has been obtained the easiest way to compile is with `cargo build --release`, then add `path/to/pompom/target/release` to your [PATH](https://en.wikipedia.org/wiki/PATH_(variable)). I do not know if this software compiles on Windows, if you have any problems with doing this [open an issue](https://github.com/LiquidZulu/pompom/issues).
 
 
-<a id="org4a42371"></a>
+<a id="org06c6506"></a>
 
 ## crates.io
 
 This software is distributed also at [crates.io](https://crates.io/crates/pompom), and should be able to be installed with `cargo install pompom`.
 
 
-<a id="orgd540547"></a>
+<a id="org63d2c98"></a>
 
 # usage
 
@@ -54,12 +53,12 @@ This software is distributed also at [crates.io](https://crates.io/crates/pompom
       -V, --version      Print version
 
 
-<a id="orgb38a055"></a>
+<a id="org1eaa132"></a>
 
 # configuration
 
 
-<a id="org764d512"></a>
+<a id="orgd9c9e12"></a>
 
 ## default config
 
@@ -78,7 +77,7 @@ The following default configuration file should be generated at `$XDG_CONFIG_HOM
     Minutes = 30
 
 
-<a id="orgcfdc47a"></a>
+<a id="orgc032d9f"></a>
 
 ## splash screen variant
 
@@ -91,14 +90,14 @@ Options for `splash_screen_variant` are provided by the `SplashScreen` enum in `
 Any text other than &ldquo;Row&rdquo; or &ldquo;Stacked&rdquo; will be interpreted as disabling the splash screen.
 
 
-<a id="org11e5b4b"></a>
+<a id="orgd63dccb"></a>
 
 ## schedule
 
 `schedule` defines the pomodoro loop; so if you have `["Work", "Rest", "Work", "LongRest"]`, this would define a loop with a work period, followed by a rest period, followed by another work period, then a long rest before starting back at the first work. The default loop is 4 cycles of work/rest followed by a long rest. Valid periods are defined by `Period` in `src/types.rs`.
 
 
-<a id="org3980862"></a>
+<a id="org5d2094f"></a>
 
 ## duration
 
@@ -106,12 +105,4 @@ The `[*_duration]` variables define how long each period should take, valid unit
 
     [long_rest_duration]
     Hours = 1
-
-
-<a id="orgbefd13c"></a>
-
-# TODO
-
--   add pause/play
--   add skip
 

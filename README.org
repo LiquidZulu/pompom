@@ -63,6 +63,3 @@ The =[*_duration]= variables define how long each period should take, valid unit
 [long_rest_duration]
 Hours = 1
 #+end_src
-* TODO
-+ add pause/play
-+ add skip
