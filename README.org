@@ -7,7 +7,7 @@
 
 * installation
 ** build from source
-The source code can be found at [[https://github.com/LiquidZulu/pompom][this]] GitHub repo. Nix tooling is provided through =default.nix= and can be accessed by running =nix-shell= after navigating to the repository on your terminal. I do not believe this step to be necessary on non-NixOS distributions, all that this does is provides [[https://alsa-project.org/wiki/Main_Page][ALSA]] which is required to compile.
+The source code can be found at [[https://github.com/LiquidZulu/pompom][this]] GitHub repo. Nix tooling is provided through =default.nix= and can be accessed by running =nix-shell= after navigating to the repository on your terminal (this is done automatically if you use [[https://github.com/nix-community/nix-direnv][direnv]]). I do not believe this step to be necessary on non-NixOS distributions, all that this does is provides [[https://alsa-project.org/wiki/Main_Page][ALSA]] which is required to compile.
 
 When the source has been obtained the easiest way to compile is with =cargo build --release=, then add =path/to/pompom/target/release= to your [[https://en.wikipedia.org/wiki/PATH_(variable)][PATH]]. I do not know if this software compiles on Windows, if you have any problems with doing this [[https://github.com/LiquidZulu/pompom/issues][open an issue]].
 
