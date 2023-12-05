@@ -31,7 +31,7 @@ pub fn notify(period: &Period) {
                 .body(get_quote(QuoteTypes::Work))
                 .icon("pompom")
                 .appname("pompom")
-                .hint(Hint::Category("Pomodoro".to_owned()))
+                //.hint(Hint::Category("Pomodoro".to_owned()))
                 .timeout(Timeout::Milliseconds(10000))
                 .show()
                 .unwrap();
@@ -50,7 +50,7 @@ pub fn notify(period: &Period) {
                 .body(get_quote(QuoteTypes::Rest))
                 .icon("pompom")
                 .appname("pompom")
-                .hint(Hint::Category("Pomodoro".to_owned()))
+                //.hint(Hint::Category("Pomodoro".to_owned()))
                 .timeout(Timeout::Milliseconds(10000))
                 .show()
                 .unwrap();
