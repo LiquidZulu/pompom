@@ -4,7 +4,7 @@ use kira::{
     manager::{backend::DefaultBackend, AudioManager, AudioManagerSettings},
     sound::static_sound::{StaticSoundData, StaticSoundSettings},
 };
-use notify_rust::{Hint, Notification, Timeout};
+use notify_rust::{Notification, Timeout};
 use std::{path::Path, thread, time};
 
 // I really don't give a hoot if this thing errors, it just wont play the sound.
@@ -31,7 +31,6 @@ pub fn notify(period: &Period) {
                 .body(get_quote(QuoteTypes::Work))
                 .icon("pompom")
                 .appname("pompom")
-                .hint(Hint::Category("Pomodoro".to_owned()))
                 .timeout(Timeout::Milliseconds(10000))
                 .show()
                 .unwrap();
@@ -50,7 +49,6 @@ pub fn notify(period: &Period) {
                 .body(get_quote(QuoteTypes::Rest))
                 .icon("pompom")
                 .appname("pompom")
-                .hint(Hint::Category("Pomodoro".to_owned()))
                 .timeout(Timeout::Milliseconds(10000))
                 .show()
                 .unwrap();
