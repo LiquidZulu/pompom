@@ -61,12 +61,12 @@ pub fn get_config() -> Config {
                                 Ok(_) => println!(
                                     "{}: new config file created at {:?}",
                                     "INFO".blue(),
-                                    config_path.clone()
+                                    config_path
                                 ),
                                 Err(e) => println!(
                                     "{}: unable to create config file at {:?}\n{}",
                                     "WARNING".yellow(),
-                                    config_path.clone(),
+                                    config_path,
                                     e
                                 ),
                             };
